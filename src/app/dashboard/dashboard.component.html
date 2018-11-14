@@ -1,0 +1,33 @@
+<div>
+  <a routerLink = '/history'>View Search History</a>
+
+<p>
+  Search for something!
+</p>
+
+<div>
+  <input [(ngModel)]="searchText" />
+  <button (click)="search()">Search</button>
+</div>
+
+<div *ngIf="wikiResults">
+  <h3>
+    Wikipedia results:
+  </h3>
+  <div *ngFor="let wikiResult of wikiResults">
+    {{ wikiResult }}
+  </div>
+</div>
+
+<div *ngIf="giphyResults">
+    <h3>
+      Giphy results:
+    </h3>
+    <div *ngFor="let giphyResult of giphyResults">
+      <img src="{{ giphyResult }}">
+      <br>
+      {{ giphyResult }}
+    </div>
+  </div>
+
+</div>
